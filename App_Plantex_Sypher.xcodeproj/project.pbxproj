@@ -19,29 +19,17 @@
 		191586182D080265000F92E8 /* Exceptions for "App_Plantex_Sypher" folder in "App_Plantex_Sypher" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				.swift,
 				Info.plist,
 			);
 			target = 191586052D080263000F92E8 /* App_Plantex_Sypher */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		CA93701B2D376EF10073C450 /* Exceptions for "App_Plantex_Sypher" folder in "Compile Sources" phase from "App_Plantex_Sypher" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = 191586022D080263000F92E8 /* Sources */;
-			membershipExceptions = (
-				.swift,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		191586082D080264000F92E8 /* App_Plantex_Sypher */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				191586182D080265000F92E8 /* Exceptions for "App_Plantex_Sypher" folder in "App_Plantex_Sypher" target */,
-				CA93701B2D376EF10073C450 /* Exceptions for "App_Plantex_Sypher" folder in "Compile Sources" phase from "App_Plantex_Sypher" target */,
 			);
 			path = App_Plantex_Sypher;
 			sourceTree = "<group>";
