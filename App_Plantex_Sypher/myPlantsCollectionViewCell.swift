@@ -13,6 +13,7 @@ class myPlantsCollectionViewCell: UICollectionViewCell {
 //    @IBOutlet weak var image: UIImageView!
     
     @IBOutlet weak var plant_name: UILabel!
+    //git comitted//
     
     override init(frame: CGRect) {
             super.init(frame: frame)
