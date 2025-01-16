@@ -12,13 +12,27 @@ class recomendedPlantViewController: UIViewController, UICollectionViewDelegate,
 
     @IBOutlet weak var recPlantView: UICollectionView!
     
-    
+    func createLayout() -> UICollectionViewLayout {
+            return UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1.0))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(200))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .groupPaging
+
+                return section
+            }
+        }
     
     var plants: [PlantScan] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        recPlantView.collectionViewLayout = createLayout()
         // Setup data source
         recPlantView.delegate = self
         recPlantView.dataSource = self
@@ -27,7 +41,7 @@ class recomendedPlantViewController: UIViewController, UICollectionViewDelegate,
         plants = [
             PlantScan(
                 id: UUID(),
-                image: "plant",
+                image: "plant1",
                 name: "Fiddle Leaf Fig",
                 description: "A popular indoor plant with large, glossy leaves.",
                 scientificName: "Ficus lyrata",
