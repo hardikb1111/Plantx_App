@@ -1,12 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "RakeTwo_3D.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "setting.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

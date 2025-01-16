@@ -59,7 +59,7 @@ class plantCareViewController: UIViewController,UITableViewDelegate,UITableViewD
         filteredData = plantCareData.filter { $0.isHealthy }
         tableView.reloadData()
 //        healthyButton.backgroundColor = .green
-        healthyButton.tintColor = .green
+        healthyButton.tintColor = .systemGreen
 //        unHealthyButton.backgroundColor = .black
         unHealthyButton.tintColor = .lightGray
         
@@ -74,7 +74,7 @@ class plantCareViewController: UIViewController,UITableViewDelegate,UITableViewD
                 tableView.reloadData()
         healthyButton.tintColor = .lightGray
 //        unHealthyButton.backgroundColor = .red
-        unHealthyButton.tintColor = .red
+        unHealthyButton.tintColor = .systemRed
 
         
     }
