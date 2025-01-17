@@ -422,11 +422,11 @@ your account</string>
             <objects>
                 <viewController id="fYg-Ez-QYJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EG3-rP-RpM">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6JB-NI-v1x">
-                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
+                                <rect key="frame" x="0.0" y="769" width="390" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
@@ -435,7 +435,7 @@ your account</string>
                                 </items>
                             </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlantX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZS-z8-oiu">
-                                <rect key="frame" x="0.0" y="77" width="98" height="36"/>
+                                <rect key="frame" x="0.0" y="77" width="95" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -628,6 +628,7 @@ your account</string>
                             <constraint firstItem="gZS-z8-oiu" firstAttribute="leading" secondItem="EG3-rP-RpM" secondAttribute="leadingMargin" constant="-16" id="WDg-7Q-8yC"/>
                         </constraints>
                     </view>
+                    <size key="freeformSize" width="390" height="852"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0g-D5-CXH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

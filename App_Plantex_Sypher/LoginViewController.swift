@@ -37,12 +37,12 @@ class LoginViewController: UIViewController {
                     return
                 }
 
-                // Simulate OTP send process
+                
                 otpButton.isEnabled = false
 //                otpButton.backgroundColor = .systemGreen
                 resendOtp.isHidden = false
                 resendOtp.text = "OTP sent. Please wait..."
-        resendOtp.textColor = .black
+                resendOtp.textColor = .black
 
                 // Start a timer to update the resendOtp label
                 DispatchQueue.main.asyncAfter(deadline: .now() + 15) { [weak self] in
@@ -54,17 +54,32 @@ class LoginViewController: UIViewController {
                         self?.resendOtp.textColor = .gray
                         self?.resendOtp.text = "Request OTP again"
                         self?.otpButton.isEnabled = true
-                        self?.otpButton.backgroundColor = .systemGreen
+//                        self?.otpButton.backgroundColor = .systemGreen
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+                        self?.resetUI()
                     }
                 }
             }
-
+            private func resetUI() {
+                    otpButton.isEnabled = true
+//                    otpButton.backgroundColor = .systemBlue
+                    resendOtp.text = "Request OTP again"
+                    resendOtp.textColor = .gray
+                }
             private func showAlert(message: String) {
                 let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 present(alert, animated: true, completion: nil)
             }
+    
+    
+    
+    
     }
+
+
     
 
 
