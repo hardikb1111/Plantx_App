@@ -512,6 +512,7 @@
                         <outlet property="emailTxt" destination="a0A-iN-Mqq" id="yf8-mF-MIu"/>
                         <outlet property="nameTxt" destination="8uy-YG-sWx" id="SfN-ak-Jyt"/>
                         <outlet property="phoneTxt" destination="qEI-ac-Pbg" id="YaK-bG-LkF"/>
+                        <outlet property="userImage" destination="lqA-P2-b2x" id="HVJ-WP-Qh1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeG-6w-9sQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

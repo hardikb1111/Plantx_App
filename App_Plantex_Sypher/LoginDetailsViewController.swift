@@ -10,6 +10,7 @@ import UIKit
 class LoginDetailsViewController: UIViewController {
     
     
+    @IBOutlet weak var userImage: UIImageView!
     
     @IBOutlet weak var nameTxt: UITextField!
     
