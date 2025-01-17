@@ -52,6 +52,7 @@ class UserDataModel {
         
         let hashedPassword = hashPassword(password)
         let newUser = Userdata(id: id, name: name, email: email, password: hashedPassword, confirmPassword: hashedPassword, phoneNumber: phoneNumber, image: image, plantIDs: plantIDs)
+        print("Added SuceessFUlly")
         users.append(newUser)
     }
 
