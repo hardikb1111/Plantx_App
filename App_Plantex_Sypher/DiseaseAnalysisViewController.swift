@@ -7,10 +7,15 @@
 
 import UIKit
 
-class DiseaseAnalysisViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class DiseaseAnalysisViewController: UIViewController {
     
-   
-    @IBOutlet weak var diseaseTblView: UITableView!
+    @IBOutlet weak var diseaseImage: UIImageView!
+    
+    @IBOutlet weak var diseaseName: UILabel!
+    
+    @IBOutlet weak var scntificName: UILabel!
+    
+    @IBOutlet weak var scntificNamediff: UILabel!
     
     
     

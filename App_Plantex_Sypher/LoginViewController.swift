@@ -9,21 +9,62 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var PhoneNumber: UITextField!
+    
+    
+    @IBOutlet weak var otpButton: UIButton!
+    
+    @IBOutlet weak var otpField: UITextField!
+    
+    @IBOutlet weak var resendOtp: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    private func setupUI() {
+        otpButton.isEnabled = true
+        otpButton.backgroundColor = .gray
+        resendOtp.textColor = .black
+        resendOtp.isHidden = true
+    }
+
+    @IBAction func otpButton(_ sender: UIButton) {
+        
+        guard let phone = PhoneNumber.text, !phone.isEmpty else {
+                    
+                    showAlert(message: "Please enter a phone number.")
+                    return
+                }
+
+                // Simulate OTP send process
+                otpButton.isEnabled = false
+//                otpButton.backgroundColor = .systemGreen
+                resendOtp.isHidden = false
+                resendOtp.text = "OTP sent. Please wait..."
+        resendOtp.textColor = .black
+
+                // Start a timer to update the resendOtp label
+                DispatchQueue.main.asyncAfter(deadline: .now() + 15) { [weak self] in
+                    self?.resendOtp.text = "Resend OTP"
+                    self?.resendOtp.textColor = .green
+
+                    // After some more time, reset the resendOtp label
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+                        self?.resendOtp.textColor = .gray
+                        self?.resendOtp.text = "Request OTP again"
+                        self?.otpButton.isEnabled = true
+                        self?.otpButton.backgroundColor = .systemGreen
+                    }
+                }
+            }
+
+            private func showAlert(message: String) {
+                let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+            }
+    }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
