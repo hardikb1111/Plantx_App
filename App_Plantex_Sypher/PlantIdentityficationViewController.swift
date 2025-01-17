@@ -40,18 +40,20 @@ class PlantIdentityficationViewController: UIViewController {
     @IBOutlet weak var HumidityValue: UILabel!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         setupPlantDetails()
-        styleLabels()
+        
+    
     }
     private func setupPlantDetails() {
            // Dummy data for plant details
-           plantImg.image = UIImage(named: "") 
-           plantLbl.text = "Plant Information"
+           plantImg.image = UIImage(named: "scanplant")
+           plantLbl.text = "Hurray, we identified the Plant !"
            plnatName.text = "Aloe Vera"
            plnatDsc.text = """
            Aloe Vera is a succulent plant species well known for its medicinal properties, particularly in skincare. \
@@ -59,38 +61,16 @@ class PlantIdentityficationViewController: UIViewController {
            """
            Height.text = "Height"
            HeightValue.text = "30 - 50 cm"
-           Water.text = "Water Needs"
-           waterValue.text = "Moderate; water every 2-3 weeks"
-           Light.text = "Light Requirements"
-           LightValue.text = "Bright Indirect Light; avoid direct sunlight"
-           Humidity.text = "Humidity"
-           HumidityValue.text = "Low to Moderate; tolerates dry air"
+           Water.text = "2-3 weeks"
+           waterValue.text = "water"
+           Light.text = "Light "
+           LightValue.text = "Indirect Light"
+           Humidity.text = "Low"
+           HumidityValue.text = "Humidity"
        }
+    
 
-       private func styleLabels() {
-           // Styling headings (larger size, bold)
-           let headingFont = UIFont.systemFont(ofSize: 20, weight: .bold)
-           let valueFont = UIFont.systemFont(ofSize: 16, weight: .regular)
-
-           plantLbl.font = UIFont.systemFont(ofSize: 24, weight: .bold) // Larger title
-           plantLbl.textAlignment = .center
-
-           [Height, Water, Light, Humidity].forEach { label in
-               label?.font = headingFont
-           }
-
-           // Styling values (smaller size, regular)
-           [HeightValue, waterValue, LightValue, HumidityValue].forEach { label in
-               label?.font = valueFont
-           }
-
-           // Styling the description text
-           plnatDsc.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-           plnatDsc.textAlignment = .justified
-           plnatDsc.isEditable = false // Prevent editing
-           plnatDsc.backgroundColor = UIColor.clear // Match background
-       }
-
+      
     
 
 }

@@ -1,19 +1,14 @@
 //
-//  DiseaseAnalysisViewController.swift
+//  saveDiseaseViewController.swift
 //  App_Plantex_Sypher
 //
-//  Created by Hardik Bhardwaj on 31/12/24.
+//  Created by DIWAKAR KUMAR on 17/01/25.
 //
 
 import UIKit
 
-class DiseaseAnalysisViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
-   
-    @IBOutlet weak var diseaseTblView: UITableView!
-    
-    
-    
+class saveDiseaseViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
