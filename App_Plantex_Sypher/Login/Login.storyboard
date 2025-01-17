@@ -466,6 +466,9 @@
                                         <color key="tintColor" red="0.020216996809999999" green="0.67098721589999999" blue="0.1319613127" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                        <connections>
+                                            <action selector="onRegisterTapped:" destination="GGo-0M-7zb" eventType="touchUpInside" id="Bei-DS-d65"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -517,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeG-6w-9sQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7222" y="-1044"/>
+            <point key="canvasLocation" x="7483" y="-689"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VsC-DJ-YQk">
