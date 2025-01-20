@@ -870,21 +870,6 @@ your account</string>
             </objects>
             <point key="canvasLocation" x="8605" y="-2244"/>
         </scene>
-        <!--Scanner View Controller-->
-        <scene sceneID="dnR-Ac-5PO">
-            <objects>
-                <viewController id="EJM-v7-LsX" customClass="ScannerViewController" customModule="App_Plantex_Sypher" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kD3-r5-Dh6">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="98R-Jo-NxZ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wPq-Tp-NaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7813" y="-2244"/>
-        </scene>
     </scenes>
     <resources>
         <image name="69a5602fb6377d1fef9bb45e8db9e415" width="736" height="736"/>

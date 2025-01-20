@@ -8,7 +8,7 @@
 class HomeModel {
     private var wetherReport: [Wether] = []
     private var careReport: [CareSection] = []
-    private var myPlants: [PlantScan] = []
+    private var myPlants: [PlantScan] = PlantScanModel.shared.generateDummyData()
     private var recommendedPlants: [PlantScan] = []
     
     static var shared: HomeModel = HomeModel()
