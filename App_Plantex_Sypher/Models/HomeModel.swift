@@ -6,8 +6,8 @@
 //
 
 class HomeModel {
-    private var wetherReport: [Wether] = []
-    private var careReport: [CareSection] = []
+    private var wetherReport: [Wether] = WeatherModel.shared.getWeatherRecords()
+    private var careReport: [CareSection] = CareSectionModel.shared.getCareSections()
     private var myPlants: [PlantScan] = PlantScanModel.shared.generateDummyData()
     private var recommendedPlants: [PlantScan] = []
     

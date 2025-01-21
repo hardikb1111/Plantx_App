@@ -38,23 +38,36 @@ import UIKit
 class MyHomeCollectionViewCell: UICollectionViewCell {
 
     
-    var plantImage: UIImageView!
-        var PlantName: UILabel!
+    static let identifier = "PlantCell"
+        
+        private var plantImage: UIImageView!
+        private var plantNameLabel: UILabel!
         
         override init(frame: CGRect) {
             super.init(frame: frame)
             
-          
-            plantImage = UIImageView(frame: CGRect(x: 10, y: 10, width: frame.width - 20, height: frame.height - 40))
-            PlantName = UILabel(frame: CGRect(x: 10, y: frame.height - 30, width: frame.width - 20, height: 20))
-            
-       
+            // Configure plantImage
+            plantImage = UIImageView(frame: CGRect(x: 10, y: 10, width: frame.width - 20, height: frame.height - 50))
             plantImage.contentMode = .scaleAspectFill
-            PlantName.textAlignment = .center
-            
-            
+            plantImage.clipsToBounds = true
+            plantImage.layer.cornerRadius = 10
+            plantImage.layer.masksToBounds = true
             contentView.addSubview(plantImage)
-            contentView.addSubview(PlantName)
+            
+            // Configure plantNameLabel
+            plantNameLabel = UILabel(frame: CGRect(x: 10, y: frame.height - 35, width: frame.width - 20, height: 25))
+            plantNameLabel.textAlignment = .center
+            plantNameLabel.font = UIFont.boldSystemFont(ofSize: 16)
+            plantNameLabel.textColor = .darkGray
+            contentView.addSubview(plantNameLabel)
+            
+            // Configure contentView for shadow effect
+            contentView.layer.cornerRadius = 12
+            contentView.layer.shadowColor = UIColor.black.cgColor
+            contentView.layer.shadowOpacity = 0.2
+            contentView.layer.shadowOffset = CGSize(width: 0, height: 2)
+            contentView.layer.shadowRadius = 4
+            contentView.backgroundColor = .white
         }
         
         required init?(coder: NSCoder) {
@@ -62,8 +75,7 @@ class MyHomeCollectionViewCell: UICollectionViewCell {
         }
         
         func configure(with plant: PlantScan) {
-           
             plantImage.image = UIImage(named: plant.image)
-            PlantName.text = plant.name
+            plantNameLabel.text = plant.name
         }
     }

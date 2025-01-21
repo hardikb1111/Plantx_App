@@ -27,9 +27,11 @@ class WeatherModel {
         let newWeather = Wether(id: UUID(), date: date, temperature: temperature, humidity: humidity, windSpeed: windSpeed)
         weatherRecords.append(newWeather)
         return newWeather
+        
     }
 
     func getWeatherRecords() -> [Wether] {
+        getDummyWeather()
         return weatherRecords
     }
 
@@ -37,5 +39,15 @@ class WeatherModel {
         if let index = weatherRecords.firstIndex(where: { $0.id == id }) {
             weatherRecords.remove(at: index)
         }
+            
+    }
+    
+    
+    func getDummyWeather() {
+        let dummyWeather =
+            Wether(id: UUID(), date: "2024-01-01", temperature: "25°C", humidity: "60%", windSpeed: "10 km/h")
+            
+        weatherRecords.append(dummyWeather)
     }
 }
+

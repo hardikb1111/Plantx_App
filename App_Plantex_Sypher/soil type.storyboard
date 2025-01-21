@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N3J-Ih-SXh">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -272,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="1823.6641221374045" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Nearby Nursery View Controller-->
         <scene sceneID="0ae-1g-y3b">
             <objects>
-                <viewController id="8GX-8c-NTX" sceneMemberID="viewController">
+                <viewController id="8GX-8c-NTX" customClass="NearbyNurseryViewController" customModule="App_Plantex_Sypher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h0A-7p-Iny">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,18 +291,18 @@
                                 <rect key="frame" x="0.0" y="162" width="393" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="98" id="zlM-N0-i6G">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NearbyNurseryCell" rowHeight="130" id="zlM-N0-i6G" customClass="nearByShopTableViewCell" customModule="App_Plantex_Sypher" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zlM-N0-i6G" id="h79-rO-pUi">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Eb-nt-1z1">
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="87"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W3Y-Vz-Icd">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plant_3D" translatesAutoresizingMaskIntoConstraints="NO" id="W3Y-Vz-Icd">
                                                             <rect key="frame" x="8" y="0.0" width="128" height="101"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
@@ -332,6 +332,12 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="distance" destination="SEA-ne-PFv" id="bE8-8h-ltR"/>
+                                            <outlet property="locationImage" destination="W3Y-Vz-Icd" id="e6J-QG-iDQ"/>
+                                            <outlet property="shopNameLabel" destination="eEl-PV-hip" id="o77-PI-9lr"/>
+                                            <outlet property="timeTaken" destination="9b9-OI-4AC" id="MCA-Wt-u3G"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -344,6 +350,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VWi-YG-9dN"/>
+                    <connections>
+                        <outlet property="nearByShop" destination="ezt-al-gFd" id="o08-CE-fKi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEg-X2-xbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -369,6 +378,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Plant_3D" width="47" height="51"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
