@@ -16,7 +16,7 @@ class plantCareTableViewCell: UITableViewCell {
     
     @IBOutlet weak var plantGroath: UILabel!
     
-    
+    private let cardView = UIView()
     
     
     

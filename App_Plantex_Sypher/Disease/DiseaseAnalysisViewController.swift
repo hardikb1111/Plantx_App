@@ -35,6 +35,7 @@ class DiseaseAnalysisViewController: UIViewController {
     
     let diseaseScanModel = DiseaseScanModel.shared
 
+
         override func viewDidLoad() {
             super.viewDidLoad()
 

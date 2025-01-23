@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Explore.png",
+      "filename" : "soil1.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Explore 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

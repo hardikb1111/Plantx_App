@@ -68,7 +68,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Scane the plant">
+                                        <fragment content="Scan the plant">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <font key="NSFont" size="23" name="Helvetica"/>
@@ -88,7 +88,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Scane the disease">
+                                        <fragment content="Scan the disease">
                                             <attributes>
                                                 <font key="NSFont" size="23" name="Helvetica"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
@@ -104,7 +104,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Scane the soil">
+                                        <fragment content="Scan the soil">
                                             <attributes>
                                                 <font key="NSFont" size="23" name="Helvetica"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>

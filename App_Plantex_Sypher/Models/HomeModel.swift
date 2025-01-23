@@ -10,6 +10,7 @@ class HomeModel {
     private var careReport: [CareSection] = CareSectionModel.shared.getCareSections()
     private var myPlants: [PlantScan] = PlantScanModel.shared.generateDummyData()
     private var recommendedPlants: [PlantScan] = []
+    private var mySoil:[SoilScane] = SoilScanModel.shared.getAllSoilScans()
     
     static var shared: HomeModel = HomeModel()
     
@@ -39,6 +40,9 @@ class HomeModel {
     
     func getRecommendedPlants() -> [PlantScan] {
         return recommendedPlants
+    }
+    func getSoil() -> [SoilScane]{
+        return mySoil
     }
     
    

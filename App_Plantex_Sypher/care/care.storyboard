@@ -113,7 +113,7 @@
                                     <constraint firstAttribute="width" constant="153" id="nby-pS-8ua"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Unhealthy">
+                                <buttonConfiguration key="configuration" style="filled" title="Sickly">
                                     <color key="baseBackgroundColor" red="0.91976243257522583" green="0.32905368114647565" blue="0.25193990869995836" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -125,21 +125,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SCP-iS-6tJ" firstAttribute="leading" secondItem="Zqc-d4-v2y" secondAttribute="leading" id="2LC-Qa-gen"/>
+                            <constraint firstItem="e7g-Ks-9O3" firstAttribute="leading" secondItem="Zqc-d4-v2y" secondAttribute="trailing" constant="53" id="95g-XG-9As"/>
                             <constraint firstItem="SCP-iS-6tJ" firstAttribute="top" secondItem="Zqc-d4-v2y" secondAttribute="bottom" constant="21" id="9ux-To-8aH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="e7g-Ks-9O3" secondAttribute="trailing" constant="16" id="EVG-7w-og7"/>
+                            <constraint firstItem="Zqc-d4-v2y" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ovf-Zw-U8G"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="e7g-Ks-9O3" secondAttribute="trailing" constant="16" id="Rfg-uS-p3D"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SCP-iS-6tJ" secondAttribute="trailing" constant="16" id="SSN-AD-3eL"/>
                             <constraint firstItem="e7g-Ks-9O3" firstAttribute="leading" secondItem="Zqc-d4-v2y" secondAttribute="trailing" constant="53" id="TRr-0E-DBb"/>
                             <constraint firstItem="Zqc-d4-v2y" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="e7U-aC-3pn"/>
-                            <constraint firstItem="SCP-iS-6tJ" firstAttribute="top" secondItem="e7g-Ks-9O3" secondAttribute="bottom" constant="21" id="ezc-nq-5tz"/>
                             <constraint firstItem="e7g-Ks-9O3" firstAttribute="leading" secondItem="Zqc-d4-v2y" secondAttribute="trailing" constant="53" id="gDf-UO-3Un"/>
-                            <constraint firstItem="SCP-iS-6tJ" firstAttribute="top" secondItem="Zqc-d4-v2y" secondAttribute="bottom" constant="21" id="ifz-tg-VKz"/>
                             <constraint firstItem="e7g-Ks-9O3" firstAttribute="baseline" secondItem="Zqc-d4-v2y" secondAttribute="baseline" id="lz4-VE-gvC"/>
                             <constraint firstItem="SCP-iS-6tJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="rRb-Ho-FlZ"/>
                             <constraint firstItem="e7g-Ks-9O3" firstAttribute="leading" secondItem="Zqc-d4-v2y" secondAttribute="trailing" constant="53" id="srO-Wr-xhF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SCP-iS-6tJ" secondAttribute="bottom" id="vhG-pk-Yge"/>
-                            <constraint firstItem="e7g-Ks-9O3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="wCC-k5-ttS"/>
+                            <constraint firstItem="e7g-Ks-9O3" firstAttribute="leading" secondItem="Zqc-d4-v2y" secondAttribute="trailing" constant="53" id="voj-gz-LJC"/>
                             <constraint firstItem="SCP-iS-6tJ" firstAttribute="trailing" secondItem="e7g-Ks-9O3" secondAttribute="trailing" id="wCV-Ls-MMD"/>
-                            <constraint firstItem="Zqc-d4-v2y" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="zbC-7C-F0z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Plants" id="ThT-Uh-TWQ">

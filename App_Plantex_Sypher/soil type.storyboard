@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xFY-MO-R34">
-                                <rect key="frame" x="16" y="370" width="361" height="166.66666666666663"/>
+                                <rect key="frame" x="16" y="370" width="361" height="166.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="166.66666666666657" id="2ed-bD-uMf"/>
