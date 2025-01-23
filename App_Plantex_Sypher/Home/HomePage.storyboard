@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qPg-cQ-OCU">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PlantX-->
+        <scene sceneID="fRO-So-GfY">
+            <objects>
+                <viewController id="dfG-TD-TcL" customClass="HomeViewController" customModule="App_Plantex_Sypher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OPp-s8-4rL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbk-BM-NyU">
+                                <rect key="frame" x="0.0" y="155" width="393" height="697"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iib-BU-xSE" userLabel="first view">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QV7-ax-92U">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mlN-vF-Mez">
+                                                    <size key="itemSize" width="206" height="160"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WetherCell" id="hBj-Zo-Yzp" customClass="wetherCellCollectionViewCell" customModule="App_Plantex_Sypher" customModuleProvider="target">
+                                                        <rect key="frame" x="93.666666666666671" y="0.0" width="206" height="160"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZyY-Fm-OWP">
+                                                            <rect key="frame" x="0.0" y="0.0" width="206" height="160"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1617957796155-72d8717ac882" translatesAutoresizingMaskIntoConstraints="NO" id="Pcz-sZ-V04">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="206" height="160"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="Pcz-sZ-V04" secondAttribute="trailing" id="OOh-di-Dvy"/>
+                                                                <constraint firstItem="Pcz-sZ-V04" firstAttribute="top" secondItem="ZyY-Fm-OWP" secondAttribute="top" id="Wih-pb-GBW"/>
+                                                                <constraint firstItem="Pcz-sZ-V04" firstAttribute="leading" secondItem="ZyY-Fm-OWP" secondAttribute="leading" id="bwd-oX-pVu"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Pcz-sZ-V04" secondAttribute="bottom" id="rHF-8A-ixZ"/>
+                                                            </constraints>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="206" height="160"/>
+                                                    </collectionViewCell>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CareGridCell" id="usK-f1-Sb8" customClass="CareGridCellCollectionViewCell" customModule="App_Plantex_Sypher" customModuleProvider="target">
+                                                        <rect key="frame" x="12" y="170" width="369" height="243"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QqE-YA-q0r">
+                                                            <rect key="frame" x="0.0" y="0.0" width="369" height="243"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7em-g1-lgB">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="369" height="243"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aaq-rv-3d9">
+                                                                        <size key="itemSize" width="246" height="192"/>
+                                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                    </collectionViewFlowLayout>
+                                                                    <cells>
+                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fjb-Ey-iVG">
+                                                                            <rect key="frame" x="61.666666666666664" y="0.0" width="246" height="192"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n9B-8E-0AR">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="246" height="192"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                            </collectionViewCellContentView>
+                                                                            <size key="customSize" width="246" height="192"/>
+                                                                        </collectionViewCell>
+                                                                    </cells>
+                                                                </collectionView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="7em-g1-lgB" firstAttribute="top" secondItem="QqE-YA-q0r" secondAttribute="top" id="1ji-zj-Gak"/>
+                                                                <constraint firstItem="7em-g1-lgB" firstAttribute="leading" secondItem="QqE-YA-q0r" secondAttribute="leading" id="TIg-MZ-nqC"/>
+                                                                <constraint firstAttribute="bottom" secondItem="7em-g1-lgB" secondAttribute="bottom" id="mn8-ca-kNc"/>
+                                                                <constraint firstAttribute="trailing" secondItem="7em-g1-lgB" secondAttribute="trailing" id="q39-3v-bYJ"/>
+                                                            </constraints>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="369" height="243"/>
+                                                    </collectionViewCell>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="MyPlantsCell" id="rZ5-BM-lUT" customClass="myAllPlantCollectionViewCell" customModule="App_Plantex_Sypher" customModuleProvider="target">
+                                                        <rect key="frame" x="93.666666666666671" y="423" width="206" height="160"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Sha-qA-1ke">
+                                                            <rect key="frame" x="0.0" y="0.0" width="206" height="160"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </collectionViewCellContentView>
+                                                    </collectionViewCell>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SoilCollectionCell" id="HMv-sJ-u48" customClass="mySoilCollectionViewCell" customModule="App_Plantex_Sypher" customModuleProvider="target">
+                                                        <rect key="frame" x="93.666666666666671" y="593" width="206" height="160"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="G3G-tP-pFa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="206" height="160"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </collectionViewCellContentView>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstItem="QV7-ax-92U" firstAttribute="top" secondItem="iib-BU-xSE" secondAttribute="top" id="0u2-D4-bSZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="QV7-ax-92U" secondAttribute="trailing" id="1aE-ul-EMv"/>
+                                            <constraint firstItem="QV7-ax-92U" firstAttribute="leading" secondItem="iib-BU-xSE" secondAttribute="leading" id="Z1D-0X-gN9"/>
+                                            <constraint firstAttribute="height" constant="1200" id="rYu-mz-1lz"/>
+                                            <constraint firstAttribute="bottom" secondItem="QV7-ax-92U" secondAttribute="bottom" id="zDb-PF-8qN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="iib-BU-xSE" secondAttribute="trailing" id="CoN-sc-3WG"/>
+                                    <constraint firstAttribute="bottom" secondItem="iib-BU-xSE" secondAttribute="bottom" id="Fsu-SP-nN9"/>
+                                    <constraint firstItem="iib-BU-xSE" firstAttribute="top" secondItem="xbk-BM-NyU" secondAttribute="top" id="KSb-R9-iFl"/>
+                                    <constraint firstItem="iib-BU-xSE" firstAttribute="leading" secondItem="xbk-BM-NyU" secondAttribute="leading" id="OKN-hP-0gh"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FeD-Kt-LHb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xbk-BM-NyU" firstAttribute="trailing" secondItem="FeD-Kt-LHb" secondAttribute="trailing" id="0a1-qe-v7m"/>
+                            <constraint firstItem="iib-BU-xSE" firstAttribute="width" secondItem="OPp-s8-4rL" secondAttribute="width" id="0cD-sT-NWx"/>
+                            <constraint firstAttribute="bottom" secondItem="xbk-BM-NyU" secondAttribute="bottom" id="a7k-bd-31E"/>
+                            <constraint firstItem="xbk-BM-NyU" firstAttribute="top" secondItem="FeD-Kt-LHb" secondAttribute="top" id="f7F-Bv-qc6"/>
+                            <constraint firstItem="xbk-BM-NyU" firstAttribute="leading" secondItem="FeD-Kt-LHb" secondAttribute="leading" id="ovZ-1K-Ha3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PlantX" id="9jT-bO-bhv"/>
+                    <connections>
+                        <outlet property="homeCollectionViews" destination="QV7-ax-92U" id="SGj-em-mCI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gqF-Yz-ewh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953.43511450381675" y="-56.338028169014088"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dss-HX-IIx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qPg-cQ-OCU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="8iP-Wm-xWY">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dfG-TD-TcL" kind="relationship" relationship="rootViewController" id="vQH-Ri-XFJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pOj-0M-KBq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26.717557251908396" y="-56.338028169014088"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo-1617957796155-72d8717ac882" width="3000" height="1688"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

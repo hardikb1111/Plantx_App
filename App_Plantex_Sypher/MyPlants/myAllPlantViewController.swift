@@ -63,9 +63,16 @@ class myAllPlantViewController: UIViewController, UICollectionViewDataSource, UI
             return 10
         }
     
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            let plant = plants[indexPath.item]
-            print(plant.image)
-            print(plant.name)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedItem = plants[indexPath.item]
+        
+        // Navigate to DetailViewController
+        let storyboard = UIStoryboard(name: "myPlant", bundle: nil)
+        if let detailVC = storyboard.instantiateViewController(withIdentifier: "myPlantDetailsViewController") as? myPlantDetailsViewController {
+            detailVC.plantDetails = selectedItem // Pass the selected plant data
+            navigationController?.pushViewController(detailVC, animated: true)
         }
     }
+
+        
+}

@@ -14,7 +14,6 @@ struct Nutrient {
     var quantity: String
 }
 
-
 struct RecommendedPlant {
     var name: String
     var image: String
@@ -35,17 +34,26 @@ class SoilScanModel {
     static var shared: SoilScanModel = SoilScanModel()
     
     private init() {}
-
+    
     func addSoilScan(soilScan: SoilScane) {
         soilScans.append(soilScan)
     }
-        
+    
     func getAllSoilScans() -> [SoilScane] {
         createDummyData()
         return soilScans
     }
     
-    func createDummyData() {
+    func getRecommendedPlants(forSoilName soilName: String) -> [RecommendedPlant] {
+        guard let soil = soilScans.first(where: { $0.name.lowercased() == soilName.lowercased() }) else {
+            return []
+        }
+        return soil.recommendedPlants
+    }
+    
+    private func createDummyData() {
+        if !soilScans.isEmpty { return } 
+        
         let nutrients1 = [
             Nutrient(name: "Nitrogen", value: .high, quantity: "20%"),
             Nutrient(name: "Phosphorus", value: .medium, quantity: "15%"),
@@ -58,8 +66,6 @@ class SoilScanModel {
             Nutrient(name: "Potassium", value: .medium, quantity: "12%")
         ]
         
-        
-        
         let recommendedPlants1 = [
             RecommendedPlant(name: "Tomato", image: "tomato.png"),
             RecommendedPlant(name: "Lettuce", image: "lettuce.png")
@@ -69,8 +75,6 @@ class SoilScanModel {
             RecommendedPlant(name: "Carrot", image: "carrot.png"),
             RecommendedPlant(name: "Potato", image: "potato.png")
         ]
-        
-        
         
         let soilScan1 = SoilScane(
             id: UUID(),
@@ -90,12 +94,8 @@ class SoilScanModel {
             recommendedPlants: recommendedPlants2
         )
         
-       
-        SoilScanModel.shared.addSoilScan(soilScan: soilScan1)
-        SoilScanModel.shared.addSoilScan(soilScan: soilScan2)
-        
+        addSoilScan(soilScan: soilScan1)
+        addSoilScan(soilScan: soilScan2)
     }
-
 }
-
 
