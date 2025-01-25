@@ -58,53 +58,61 @@ class LoginDetailsViewController: UIViewController, UIImagePickerControllerDeleg
         }
     
     @IBAction func onRegisterTapped(_ sender: UIButton) {
- 
-    
         
         guard let name = nameTxt.text, !name.isEmpty,
-                  let phone = phoneTxt.text, !phone.isEmpty,
-                  let email = emailTxt.text, !email.isEmpty,
-                  let password = PassWordText.text, !password.isEmpty,
-                  let confirmPassword = cnfPassWordText.text, !confirmPassword.isEmpty else {
-                
-                // Show error message
-                showErrorAlert(message: "All fields are required.")
-                return
-            }
+              let phone = phoneTxt.text, !phone.isEmpty,
+              let email = emailTxt.text, !email.isEmpty,
+              let password = PassWordText.text, !password.isEmpty,
+              let confirmPassword = cnfPassWordText.text, !confirmPassword.isEmpty else {
             
-            // Optional: Validate password match
-            if password != confirmPassword {
-                showErrorAlert(message: "Passwords do not match.")
-                return
-            }
-            
-            // If all validations pass, print the values
-            print("Name: \(name)")
-            print("Phone: \(phone)")
-            print("Email: \(email)")
-            print("Password: \(password)")
-            print("Confirm Password: \(confirmPassword)")
-//
-//        
-            let id = UUID()
-//            let imageBase64 = userImageData.base64EncodedString()
-
-            UserDataModel.shared.addUser(
-                id: id,
-                name: name,
-                email: email,
-                password: password,
-                confirmPassword: confirmPassword,
-                phoneNumber: phone,
-                image: "blank-profile-picture-973460_1280"
-            )
+            showErrorAlert(message: "All fields are required.")
+            return
+        }
         
+        // Validate password match
+        if password != confirmPassword {
+            showErrorAlert(message: "Passwords do not match.")
+            return
+        }
+        
+        // Save login state and user info
+        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+        UserDefaults.standard.set(name, forKey: "userName")
+        UserDefaults.standard.set(email, forKey: "userEmail")
+        UserDefaults.standard.set(password, forKey: "userPassword")
+        
+        // Optionally save the image as a base64 string or name
+        if let selectedImage = userImage.image {
+            let imageData = selectedImage.jpegData(compressionQuality: 0.8)
+            let imageBase64String = imageData?.base64EncodedString()
+            UserDefaults.standard.set(imageBase64String, forKey: "userProfileImage")
+        }
+        
+        // If everything is okay, save user info
+        let id = UUID()
+        UserDataModel.shared.addUser(
+            id: id,
+            name: name,
+            email: email,
+            password: password,
+            confirmPassword: confirmPassword,
+            phoneNumber: phone,
+            image: "blank-profile-picture-973460_1280"
+        )
+        
+        // Navigate to profile page after successful registration
+        navigateToProfile()
     }
     func showErrorAlert(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
-    
+    func navigateToProfile() {
+        if let profileVC = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
+            navigationController?.pushViewController(profileVC, animated: true)
+        }
+    }
+
     
 }

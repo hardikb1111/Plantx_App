@@ -120,8 +120,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aGE-QW-O6N">
-                                <rect key="frame" x="64" y="101" width="265" height="268"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aGE-QW-O6N">
+                                <rect key="frame" x="64" y="101.00000000000003" width="265" height="326.66666666666674"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p6F-XC-U65">
                                 <rect key="frame" x="16" y="477.66666666666674" width="361" height="293.33333333333326"/>
@@ -160,7 +160,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMC-LN-qcL">
-                                        <rect key="frame" x="0.0" y="258.99999999999994" width="361" height="34.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="258.99999999999994" width="84.666666666666671" height="34.333333333333314"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Log Out"/>
@@ -179,7 +179,6 @@
                                     <constraint firstItem="hH4-VD-InK" firstAttribute="leading" secondItem="p6F-XC-U65" secondAttribute="leading" id="JmY-4a-URs"/>
                                     <constraint firstItem="Z8s-EM-0Fr" firstAttribute="leading" secondItem="p6F-XC-U65" secondAttribute="leading" id="KZX-Ib-lf2"/>
                                     <constraint firstAttribute="trailing" secondItem="hH4-VD-InK" secondAttribute="trailing" id="LBH-eO-wC6"/>
-                                    <constraint firstItem="QMC-LN-qcL" firstAttribute="centerX" secondItem="p6F-XC-U65" secondAttribute="centerX" id="YYG-KM-QIb"/>
                                     <constraint firstAttribute="trailing" secondItem="9DT-fh-3ei" secondAttribute="trailing" id="bQC-op-THM"/>
                                     <constraint firstAttribute="trailing" secondItem="1eh-4B-733" secondAttribute="trailing" id="gwk-BS-mRB"/>
                                     <constraint firstAttribute="trailing" secondItem="Z8s-EM-0Fr" secondAttribute="trailing" id="pa2-Qu-pWu"/>
