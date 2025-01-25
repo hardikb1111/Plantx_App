@@ -45,6 +45,7 @@ class SoilScanModel {
     }
     
     func getRecommendedPlants(forSoilName soilName: String) -> [RecommendedPlant] {
+        print(soilName)
         guard let soil = soilScans.first(where: { $0.name.lowercased() == soilName.lowercased() }) else {
             return []
         }
@@ -52,8 +53,11 @@ class SoilScanModel {
     }
     
     private func createDummyData() {
-        if !soilScans.isEmpty { return } 
-        
+        if !soilScans.isEmpty {
+            print("Dummy data already exists. Skipping creation.")
+            return
+        }
+
         let nutrients1 = [
             Nutrient(name: "Nitrogen", value: .high, quantity: "20%"),
             Nutrient(name: "Phosphorus", value: .medium, quantity: "15%"),
@@ -80,7 +84,10 @@ class SoilScanModel {
             id: UUID(),
             image: "soil1.png",
             name: "Rich Soil",
-            description: "Soil rich in nitrogen and suitable for leafy vegetables.",
+            description: """
+            Rich soil is nutrient-dense, dark, and full of organic matter, making it ideal for plant growth. It contains balanced levels of minerals, moisture, and microorganisms that help plants thrive. Rich soil retains moisture well, promotes root development, and supports healthy plant ecosystems, enhancing agricultural productivity and biodiversity.
+                
+            """,
             nutrients: nutrients1,
             recommendedPlants: recommendedPlants1
         )
@@ -95,7 +102,11 @@ class SoilScanModel {
         )
         
         addSoilScan(soilScan: soilScan1)
+        print("Added soil scan: \(soilScan1.name)")
+        
         addSoilScan(soilScan: soilScan2)
+        print("Added soil scan: \(soilScan2.name)")
     }
+
 }
 

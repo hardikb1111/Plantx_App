@@ -24,10 +24,25 @@ class plantCareTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupCardStyle()
         
     }
+    
+    private func setupCardStyle() {
+            // Card view styling
+            cardView.layer.cornerRadius = 12
+            cardView.layer.shadowColor = UIColor.black.cgColor
+            cardView.layer.shadowOpacity = 0.2
+            cardView.layer.shadowOffset = CGSize(width: 0, height: 2)
+            cardView.layer.shadowRadius = 6
+            cardView.layer.masksToBounds = false
+            cardView.backgroundColor = UIColor.white
 
+            // Plant image styling
+            plantImage.layer.cornerRadius = 8
+            plantImage.clipsToBounds = true
+            plantImage.contentMode = .scaleAspectFill
+        }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

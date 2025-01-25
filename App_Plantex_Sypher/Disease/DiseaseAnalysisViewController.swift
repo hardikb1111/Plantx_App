@@ -73,24 +73,14 @@ class DiseaseAnalysisViewController: UIViewController {
                 plantIDs: [plant1ID]
             )
 
-            diseaseScanModel.addDisease(
-                diseaseName: "Rust",
-                scientificName: "Pucciniales",
-                alsoKnownAs: ["Leaf Rust"],
-                diseaseImage: "rust_disease.png",
-                description: "A fungal disease causing rust-colored spots on leaves.",
-                symptoms: ["Rust-colored spots", "Premature leaf drop"],
-                solutions: [chemical3],
-                preventiveMeasures: ["Remove infected leaves", "Use resistant plant varieties"],
-                plantIDs: [plant1ID, plant2ID]
-            )
+            
             
            
         }
         
         private func displayDisease(_ disease: Disease) {
             // Update UI elements with disease data
-            plantName.text = "Mint Rust"
+            plantName.text = disease.diseaseName
             diseaseName.text = "Disease Name  :"
             diseaseNameValue.text = disease.diseaseName
             scntificName.text = "Scientific Name :"
@@ -104,4 +94,26 @@ class DiseaseAnalysisViewController: UIViewController {
                 diseaseImage.image = image
             }
         }
+    
+    
+    @IBAction func SaveButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Disease Saved",
+                                          message: "The disease has been successfully saved to the care section.",
+                                          preferredStyle: .alert)
+           
+           // Add an "OK" action to dismiss the alert
+           alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+           
+           // Present the alert
+           self.present(alert, animated: true, completion: nil)
+           
+           
+//           if let disease = diseaseScanModel.getDiseaseScans().first {
+//               diseaseScanModel.saveDiseaseToCareSection(disease)
+//               print("Disease \(disease.diseaseName) saved to care section.")
+//           }
+        
+        
+    }
+    
     }

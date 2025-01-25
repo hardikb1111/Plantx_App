@@ -40,17 +40,6 @@
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZyY-Fm-OWP">
                                                             <rect key="frame" x="0.0" y="0.0" width="206" height="160"/>
                                                             <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1617957796155-72d8717ac882" translatesAutoresizingMaskIntoConstraints="NO" id="Pcz-sZ-V04">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="206" height="160"/>
-                                                                </imageView>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="Pcz-sZ-V04" secondAttribute="trailing" id="OOh-di-Dvy"/>
-                                                                <constraint firstItem="Pcz-sZ-V04" firstAttribute="top" secondItem="ZyY-Fm-OWP" secondAttribute="top" id="Wih-pb-GBW"/>
-                                                                <constraint firstItem="Pcz-sZ-V04" firstAttribute="leading" secondItem="ZyY-Fm-OWP" secondAttribute="leading" id="bwd-oX-pVu"/>
-                                                                <constraint firstAttribute="bottom" secondItem="Pcz-sZ-V04" secondAttribute="bottom" id="rHF-8A-ixZ"/>
-                                                            </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="206" height="160"/>
                                                     </collectionViewCell>
@@ -168,7 +157,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="photo-1617957796155-72d8717ac882" width="3000" height="1688"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

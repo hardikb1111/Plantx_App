@@ -42,12 +42,12 @@ class CareGridCellCollectionViewCell: UICollectionViewCell, UICollectionViewDele
 
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridItem", for: indexPath)
-            cell.backgroundColor = .green // Example color
+            cell.backgroundColor = .systemGreen
             return cell
         }
 
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let width = (collectionView.frame.width - 20) / 3 // 3 items per row with spacing
+            let width = (collectionView.frame.width - 20) / 3 
             return CGSize(width: width, height: width)
         }
     }

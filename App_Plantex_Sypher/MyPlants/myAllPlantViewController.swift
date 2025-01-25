@@ -74,5 +74,5 @@ class myAllPlantViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
 
-        
+     
 }

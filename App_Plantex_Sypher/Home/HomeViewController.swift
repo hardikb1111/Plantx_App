@@ -61,17 +61,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             switch indexPath.section {
             case CellType.weather.rawValue:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WetherCell", for: indexPath) as! wetherCellCollectionViewCell
-                // Configure banner cell
-                cell.imageView.image = UIImage(named: "wether")
+                cell.imageView.image = UIImage(named: "")
                 return cell
             case CellType.careGrid.rawValue:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CareGridCell", for: indexPath) as! CareGridCellCollectionViewCell
-                // Configure care grid
                 return cell
             case CellType.myPlants.rawValue:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPlantsCell", for: indexPath) as! allmyplantsCollectionViewCell
                 let plant = plants[indexPath.row]
-                // Call configure method to pass data to the cell
                 cell.configure(with: plant)
                 return cell
 

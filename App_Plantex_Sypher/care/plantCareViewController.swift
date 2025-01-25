@@ -7,11 +7,7 @@
 
 import UIKit
 
-struct Plant {
-    let image: UIImage
-    let name: String
-    let isHealthy: Bool
-}
+
 
 class plantCareViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -22,102 +18,116 @@ class plantCareViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     @IBOutlet weak var unHealthyButton: UIButton!
     
-    let plantCareData: [Plant] = [
-        Plant(image: UIImage(named: "plant1") ?? UIImage(systemName: "leaf")!, name: "Fern", isHealthy: true),
-        Plant(image: UIImage(named: "plant2") ?? UIImage(systemName: "leaf")!, name: "Snake Plant", isHealthy: true),
-        Plant(image: UIImage(named: "plant3") ?? UIImage(systemName: "leaf")!, name: "Orchid", isHealthy: false),
-        Plant(image: UIImage(named: "plant4") ?? UIImage(systemName: "leaf")!, name: "Peace Lily", isHealthy: true),
-        Plant(image: UIImage(named: "plant1") ?? UIImage(systemName: "leaf")!, name: "Aloe Vera", isHealthy: true),
-        
-        Plant(image: UIImage(named: "plant4") ?? UIImage(systemName: "leaf")!, name: "Peace Lily", isHealthy: false),
-        Plant(image: UIImage(named: "plant1") ?? UIImage(systemName: "leaf")!, name: "Aloe Vera", isHealthy: false)
-    ]
+    var plantCareData: [PlantHealth] = []
 
-    var filteredData: [Plant] = []
+    var filteredData: [PlantHealth] = []
+    
     override func viewDidLoad() {
             super.viewDidLoad()
-        helper()
             
-            // Do any additional setup after loading the view.
-            
-            // Set the table view's delegate and data source
-//        tableView.backgroundColor = UIColor.systemGray6
-//                
-//                
-//        tableView.separatorStyle = .none
+            setupView()
+            loadData()
+        }
+        
+        // MARK: - Setup
+        private func setupView() {
             tableView.delegate = self
             tableView.dataSource = self
             tableView.rowHeight = 140
+            updateFilter(isHealthy: true)
+        }
         
-//        filteredData = plantCareData
-            
+        private func loadData() {
+            plantCareData = PlantCareModel.shared.getAllPlants()
+            updateFilter(isHealthy: true)
         }
     
-    func helper()
-    {
-        print("call come")
-        filteredData = plantCareData.filter { $0.isHealthy }
-        tableView.reloadData()
-//        healthyButton.backgroundColor = .green
-        healthyButton.tintColor = .systemGreen
-//        unHealthyButton.backgroundColor = .black
-        unHealthyButton.tintColor = .lightGray
-        
-    }
     
     @IBAction func helathyButtonAct(_ sender: UIButton) {
-        helper()
+        updateFilter(isHealthy: true)
     }
     
     @IBAction func unHealthyButtonAct(_ sender: UIButton) {
-        filteredData = plantCareData.filter { !$0.isHealthy }
-                tableView.reloadData()
-        healthyButton.tintColor = .lightGray
-//        unHealthyButton.backgroundColor = .red
-        unHealthyButton.tintColor = .systemRed
+        updateFilter(isHealthy: false)
 
         
     }
     
-    
-    
+    private func updateFilter(isHealthy: Bool) {
+            filteredData = plantCareData.filter { $0.isHealthy == isHealthy }
+            tableView.reloadData()
+            
+            // Update button styles
+            healthyButton.tintColor = isHealthy ? .systemGreen : .lightGray
+            unHealthyButton.tintColor = isHealthy ? .lightGray : .systemRed
+        }
         
+        // MARK: - UITableViewDataSource
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return filteredData.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PlantCare", for: indexPath) as? plantCareTableViewCell
-                    
-                    // Get the corresponding plant data
-            let plant = filteredData[indexPath.row]
-                
-                // Configure the cell
-            cell?.plantImage.image = plant.image
-            cell?.plantName.text = plant.name
-            cell?.plantGroath.text = plant.isHealthy ? "Healthy" : "Not Healthy"
-            cell?.plantGroath.textColor = plant.isHealthy ? .systemGreen : .systemRed
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlantCare", for: indexPath) as? plantCareTableViewCell else {
+                fatalError("Cell identifier 'PlantCare' not found or cell is not of type PlantCareTableViewCell.")
+            }
             
-           
-                
-            return cell!
+            // Configure the cell
+            let plant = filteredData[indexPath.row]
+            cell.plantImage.image = plant.image
+            cell.plantName.text = plant.name
+            cell.plantGroath.text = plant.isHealthy ? "Healthy" : "Not Healthy"
+            cell.plantGroath.textColor = plant.isHealthy ? .systemGreen : .systemRed
+            
+            return cell
         }
-    
-//        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//            return 20
-//        }
-//        
-//        func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//            let spacerView = UIView()
-//            spacerView.backgroundColor = .clear
-//            return spacerView
-//        }
         
+        // MARK: - UITableViewDelegate
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            // Handle cell selection here
             let selectedPlant = filteredData[indexPath.row]
-                    print("Selected Plant: \(selectedPlant.name), Health Status: \(selectedPlant.isHealthy ? "Healthy" : "Not Healthy")")
+            print("Selected Plant: \(selectedPlant.name), Health Status: \(selectedPlant.isHealthy ? "Healthy" : "Not Healthy")")
         }
     
+    @IBAction func DeletePlant(_ sender: Any) {
+        print("call")
+        let alertController = UIAlertController(title: "Delete Plant", message: "Enter the name of the plant you want to delete", preferredStyle: .alert)
+                
+                alertController.addTextField { textField in
+                    textField.placeholder = "Plant Name"
+                }
+                
+                let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+                    if let plantName = alertController.textFields?.first?.text, !plantName.isEmpty {
+                        self.deletePlantByName(plantName)
+                    }
+                }
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+                alertController.addAction(deleteAction)
+                alertController.addAction(cancelAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+    }
+    private func deletePlantByName(_ name: String) {
+            if let index = plantCareData.firstIndex(where: { $0.name.lowercased() == name.lowercased() }) {
+                // Remove from both plantCareData and filteredData
+                plantCareData.remove(at: index)
+                filteredData.remove(at: index)
 
-}
+                // Reload table view after deletion
+                tableView.reloadData()
+
+                // Show alert for successful deletion
+                let successAlert = UIAlertController(title: "Success", message: "The plant '\(name)' has been successfully deleted.", preferredStyle: .alert)
+                successAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(successAlert, animated: true, completion: nil)
+            } else {
+                // If no plant is found with that name
+                let errorAlert = UIAlertController(title: "Error", message: "No plant found with the name '\(name)'.", preferredStyle: .alert)
+                errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(errorAlert, animated: true, completion: nil)
+            }
+        }
+    
+    }
