@@ -30,10 +30,15 @@ class ProfileViewController: UIViewController {
                 } else {
                     profileImage.image = UIImage(named: "defaultProfileImage") // Set a
                 }
+                print()
+                
+                
             } else {
                 
                 navigateToLogin()
             }
+        
+        
         }
         
         // Check if user is logged in
@@ -45,17 +50,19 @@ class ProfileViewController: UIViewController {
         func navigateToLogin() {
             let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginDetailsViewController") as! AlreadyHaveAccViewController
             navigationController?.pushViewController(loginVC, animated: true)
+            
+            
         }
     
     
     @IBAction func LogOut(_ sender: UIButton) {
         
         
-        UserDefaults.standard.removeObject(forKey: "userEmail")
-        UserDefaults.standard.removeObject(forKey: "userPassword")
-        UserDefaults.standard.removeObject(forKey: "userName")
-        UserDefaults.standard.removeObject(forKey: "userProfileImage")
-        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+//        UserDefaults.standard.removeObject(forKey: "userEmail")
+//        UserDefaults.standard.removeObject(forKey: "userPassword")
+//        UserDefaults.standard.removeObject(forKey: "userName")
+//        UserDefaults.standard.removeObject(forKey: "userProfileImage")
+//        UserDefaults.standard.set(false, forKey: "isLoggedIn")
         
         // Redirect to login page after logout
         navigateToLogin()
