@@ -38,7 +38,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         homeCollectionViews.delegate = self
         homeCollectionViews.dataSource = self
         
+        
     }
+      
     func numberOfSections(in collectionView: UICollectionView) -> Int {
             return 4
         }

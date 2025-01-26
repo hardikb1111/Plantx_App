@@ -8,7 +8,6 @@
 
 /* Begin PBXFileReference section */
 		191586062D080264000F92E8 /* App_Plantex_Sypher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App_Plantex_Sypher.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA9370662D376FAD0073C450 /* plant identifier.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "plant identifier.storyboard"; path = "App_Plantex_Sypher/plant identifier.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -30,6 +29,11 @@
 			path = App_Plantex_Sypher;
 			sourceTree = "<group>";
 		};
+		19E9D6772D46AD370028DE3E /* New Folder */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "New Folder";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,9 +50,9 @@
 		191585FD2D080263000F92E8 = {
 			isa = PBXGroup;
 			children = (
-				CA9370662D376FAD0073C450 /* plant identifier.storyboard */,
 				191586082D080264000F92E8 /* App_Plantex_Sypher */,
 				191586072D080264000F92E8 /* Products */,
+				19E9D6772D46AD370028DE3E /* New Folder */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +81,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				191586082D080264000F92E8 /* App_Plantex_Sypher */,
+				19E9D6772D46AD370028DE3E /* New Folder */,
 			);
 			name = App_Plantex_Sypher;
 			packageProductDependencies = (
