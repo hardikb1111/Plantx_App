@@ -13,7 +13,7 @@ enum CellType: Int {
     case mySoil
 }
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,CareGridCellDelegate {
 
     @IBOutlet weak var homeCollectionViews: UICollectionView!
     
@@ -62,10 +62,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             switch indexPath.section {
             case CellType.weather.rawValue:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WetherCell", for: indexPath) as! wetherCellCollectionViewCell
-                cell.imageView.image = UIImage(named: "")
+                cell.imageView.image = UIImage(named: "w")
                 return cell
             case CellType.careGrid.rawValue:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CareGridCell", for: indexPath) as! CareGridCellCollectionViewCell
+                cell.delegate = self
                 return cell
             case CellType.myPlants.rawValue:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPlantsCell", for: indexPath) as! allmyplantsCollectionViewCell
@@ -114,10 +115,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             case CellType.careGrid.rawValue:
                 header.titleLabel.text = "Care"
                 // Show View All button for careGrid section
-                header.viewAllButton.isHidden = false
+                header.viewAllButton.isHidden = true
                 header.viewAllButton.tag = indexPath.section
                 header.viewAllButton.isUserInteractionEnabled = true
-                header.viewAllButton.addTarget(self, action: #selector(careButtonTapped(_:)), for: .touchUpInside)
+                
             case CellType.myPlants.rawValue:
                 header.titleLabel.text = "My Plants"
                 // Show View All button for myPlants section
@@ -144,22 +145,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
             return CGSize(width: collectionView.frame.width, height: 50)
         }
-
-    @objc func careButtonTapped(_ sender: UIButton) {
-        print("View All button tapped for section \(sender.tag)")
-
-//        let storyboard = UIStoryboard(name: "Soil", bundle: nil)
-//        guard let mysoil = storyboard.instantiateViewController(withIdentifier: "SoilRecomendedViewController") as? soilRecomendedViewController else {
-//            print("Failed to instantiate SoilRecomendedViewController")
-//            return
+    
+//    @objc func careButtonTapped(_ sender: UIButton) {
+//            print("View All button tapped for section \(sender.tag)")
+//
+//            let careButtonVC = CareButton()
+//            careButtonVC.selectedCareTitle = "Care Button Title" // Set the title for the care button view controller
+//            navigationController?.pushViewController(careButtonVC, animated: true)
 //        }
-//        
-//        guard let navigationController = self.navigationController else {
-//            print("Navigation controller is nil")
-//            return
-//        }
-//        navigationController.pushViewController(mysoil, animated: true)
-    }
+
+   
     
     @objc func soilButtonTapped(_ sender: UIButton) {
         print("View All button tapped for section \(sender.tag)")
@@ -191,6 +186,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         navigationController.pushViewController(mysoil, animated: true)
     }
-
+    
+    func didTapCareButton(title: String) {
+        // Instantiate CareButton view controller from storyboard
+        let storyboard = UIStoryboard(name: "HomePage", bundle: nil)
+        if let careButtonVC = storyboard.instantiateViewController(withIdentifier: "CareButton") as? CareButton {
+            careButtonVC.selectedCareTitle = title
+            navigationController?.pushViewController(careButtonVC, animated: true)
+        }
+    }
 
 }
