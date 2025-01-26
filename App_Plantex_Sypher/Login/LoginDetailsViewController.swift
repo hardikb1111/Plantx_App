@@ -59,6 +59,8 @@ class LoginDetailsViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func onRegisterTapped(_ sender: UIButton) {
         
+        
+        
         guard let name = nameTxt.text, !name.isEmpty,
               let phone = phoneTxt.text, !phone.isEmpty,
               let email = emailTxt.text, !email.isEmpty,
@@ -109,10 +111,12 @@ class LoginDetailsViewController: UIViewController, UIImagePickerControllerDeleg
         present(alert, animated: true)
     }
     func navigateToHome() {
-        if let profileVC = storyboard?.instantiateViewController(withIdentifier: "TabrBarStart") {
-            navigationController?.pushViewController(profileVC, animated: true)
-        }
+        if let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabrBarStart") {
+                    let navigationController = UINavigationController(rootViewController: homeVC)
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController = navigationController
+                }
     }
+    
 
     
 }

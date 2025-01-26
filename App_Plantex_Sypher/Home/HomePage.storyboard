@@ -2058,7 +2058,9 @@
                             <constraint firstItem="D6U-US-DoR" firstAttribute="top" secondItem="J3s-Gp-sKi" secondAttribute="top" id="tLf-rN-iTh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BGN-Wc-Cr8"/>
+                    <navigationItem key="navigationItem" id="BGN-Wc-Cr8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="dsA-EG-BER"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="alsoKnownas" destination="0w3-Z0-QWx" id="u4M-Lu-6Ni"/>
                         <outlet property="alsoKnownasValue" destination="fAI-LU-pwb" id="yve-MM-96a"/>
@@ -2493,7 +2495,9 @@
                             <constraint firstItem="p18-l6-tIa" firstAttribute="top" secondItem="fUL-ic-7Jp" secondAttribute="bottom" constant="30" id="sbF-d0-2C6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Plant Scan Result" id="On4-Rp-kJl"/>
+                    <navigationItem key="navigationItem" title="Plant Scan Result" id="On4-Rp-kJl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="j3X-DU-Wwi"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="Height" destination="1kb-u3-RtL" id="yyv-GJ-swX"/>
                         <outlet property="HeightValue" destination="AKa-j3-jZK" id="LMw-H8-RLp"/>
@@ -2774,7 +2778,9 @@
                             <constraint firstItem="dOg-E2-FzM" firstAttribute="leading" secondItem="u0a-gW-kl7" secondAttribute="leading" id="uBW-eV-3MB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Soil Scan Result" id="2ty-7g-Xt0"/>
+                    <navigationItem key="navigationItem" title="Soil Scan Result" id="2ty-7g-Xt0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="2eP-9u-ebz"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="NitroQuantity" destination="Y8A-gI-nId" id="Pus-Ky-7dQ"/>
                         <outlet property="NitroValue" destination="Q18-kX-FU5" id="nBN-nz-IZt"/>
