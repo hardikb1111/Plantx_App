@@ -9,7 +9,7 @@ import UIKit
 
 class CommunityCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "CommunityPostCell"
+       static let identifier = "CommunityPostCell"
     
    
         

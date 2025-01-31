@@ -7,7 +7,7 @@
 
 import UIKit
 
-class createPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class createPostViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var postImage: UIImageView!
     
@@ -18,7 +18,6 @@ class createPostViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
         postImage.addGestureRecognizer(tapGesture)
         postImage.isUserInteractionEnabled = true
